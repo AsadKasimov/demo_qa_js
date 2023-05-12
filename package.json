@@ -1,0 +1,12 @@
+{
+  "dependencies": {
+    "node-key-sender": "^1.0.11",
+    "selenium-webdriver": "^4.9.0",
+    "uuid": "^9.0.0",
+    "webdriver-manager": "^12.1.9",
+    "xml2js": "^0.5.0"
+  },
+  "devDependencies": {
+    "jest": "^29.5.0"
+  }
+}
