@@ -32,7 +32,7 @@ async function exap(){
 
     await driver.findElement(By.xpath("//label[@class='custom-control-label' and text()='Sports']")).click()
 
-    await driver.findElement(By.id('uploadPicture')).sendKeys(path.resolve('./413874770.jpg'))
+    await driver.findElement(By.id('uploadPicture')).sendKeys(path.resolve('./img/413874770.jpg'))
     
     await driver.findElement(By.id('currentAddress')).sendKeys('город улица дом')
 
