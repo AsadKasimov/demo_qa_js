@@ -78,14 +78,16 @@ class RegistrationPage {
 
   async selectState(state) {
     await this.driver.findElement(this.stateDropdown).sendKeys(state);
-    await new Promise(resolve => setTimeout(resolve, 2000));
+    
     await ks.sendKey('enter');
   }
 
   async selectCity(city) {
     await this.driver.findElement(this.cityDropdown).sendKeys(city);
-    await new Promise(resolve => setTimeout(resolve, 2000));
     await ks.sendKey('enter');
+    
+
+    await new Promise(resolve => setTimeout(resolve, 2000));
   }
 
   async clickSubmit() {
