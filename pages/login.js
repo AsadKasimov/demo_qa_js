@@ -95,19 +95,16 @@ class RegistrationPage {
   }
 
   async verifyFormValues(expectedValues) {
-    let tdElements = await this.driver.findElements(By.css('tbody > tr > td'));
-
-    for (let i = 0; i < tdElements.length; i += 2) {
-      let actualValue = await tdElements[i + 1].getText();
-      let expectedValue = expectedValues[i / 2];
-
-      if (actualValue === expectedValue) {
-        console.log(`Value ${actualValue} at index ${i + 1} is correct.`);
-      } else {
-        console.log(`Value ${actualValue} at index ${i + 1} is incorrect. Expected value is ${expectedValue}`);
-      }
-    }
+    let tdElements = await this.driver.findElements(By.css('tbody > tr > td'))
+  
+    tdElements.forEach(async (tdElement, index) => {
+      let actualValue = await tdElement.getText()
+      let expectedValue = expectedValues[index / 2]
+  
+      expect(actualValue).toBe(expectedValue)
+    })
   }
+  
 }
 
 module.exports = RegistrationPage;
