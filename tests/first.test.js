@@ -46,5 +46,5 @@ describe('Registration page', () => {
     ];
 
     await registrationPage.verifyFormValues(expectedValues);
-  }); // set timeout value to 60 seconds
+  });
 });

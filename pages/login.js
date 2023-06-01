@@ -79,11 +79,14 @@ class RegistrationPage {
   async selectState(state) {
     await this.driver.findElement(this.stateDropdown).sendKeys(state);
     
+    await ks.sendKey('pagedown');
     await ks.sendKey('enter');
   }
 
   async selectCity(city) {
     await this.driver.findElement(this.cityDropdown).sendKeys(city);
+
+    await ks.sendKey('pagedown');
     await ks.sendKey('enter');
     
 
@@ -99,11 +102,13 @@ class RegistrationPage {
   
     tdElements.forEach(async (tdElement, index) => {
       let actualValue = await tdElement.getText()
-      let expectedValue = expectedValues[index / 2]
+      let expectedValue = expectedValues[index * 2] 
   
       expect(actualValue).toBe(expectedValue)
     })
   }
+  
+  
   
 }
 
